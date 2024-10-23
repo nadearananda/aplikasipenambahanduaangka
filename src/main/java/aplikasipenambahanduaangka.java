@@ -56,9 +56,25 @@ public class aplikasipenambahanduaangka extends javax.swing.JFrame {
         Hasil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Hasil.setText("Hasil");
 
+        txtAngka1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtAngka1FocusGained(evt);
+            }
+        });
         txtAngka1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtAngka1KeyTyped(evt);
+            }
+        });
+
+        txtAngka2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtAngka2FocusGained(evt);
+            }
+        });
+        txtAngka2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAngka2KeyTyped(evt);
             }
         });
 
@@ -188,9 +204,23 @@ public class aplikasipenambahanduaangka extends javax.swing.JFrame {
     char c = evt.getKeyChar();
     if (!Character.isDigit(c)) {
         evt.consume(); // Jika bukan angka, abaikan input
-    } else  JOptionPane.showMessageDialog(null, "Input harus berupa angka!");
-      
+    } 
     }//GEN-LAST:event_txtAngka1KeyTyped
+
+    private void txtAngka2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAngka2KeyTyped
+      char c = evt.getKeyChar();
+    if (!Character.isDigit(c)) {
+        evt.consume(); // Jika bukan angka, abaikan input
+    }
+    }//GEN-LAST:event_txtAngka2KeyTyped
+
+    private void txtAngka1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAngka1FocusGained
+     txtAngka1.setText("");  // Bersihkan kolom input saat fokus
+    }//GEN-LAST:event_txtAngka1FocusGained
+
+    private void txtAngka2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAngka2FocusGained
+    txtAngka2.setText("");  // Bersihkan kolom input saat fokus
+    }//GEN-LAST:event_txtAngka2FocusGained
 
     /**
      * @param args the command line arguments
