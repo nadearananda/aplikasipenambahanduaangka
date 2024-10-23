@@ -56,6 +56,12 @@ public class aplikasipenambahanduaangka extends javax.swing.JFrame {
         Hasil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Hasil.setText("Hasil");
 
+        txtAngka1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAngka1KeyTyped(evt);
+            }
+        });
+
         btntambah.setBackground(new java.awt.Color(255, 204, 102));
         btntambah.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btntambah.setText("Tambah");
@@ -176,6 +182,15 @@ public class aplikasipenambahanduaangka extends javax.swing.JFrame {
     private void btnkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkeluarActionPerformed
      System.exit(0);  // Menutup aplikasi
     }//GEN-LAST:event_btnkeluarActionPerformed
+
+    private void txtAngka1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAngka1KeyTyped
+        // Membatasi input hanya angka
+    char c = evt.getKeyChar();
+    if (!Character.isDigit(c)) {
+        evt.consume(); // Jika bukan angka, abaikan input
+    } else  JOptionPane.showMessageDialog(null, "Input harus berupa angka!");
+      
+    }//GEN-LAST:event_txtAngka1KeyTyped
 
     /**
      * @param args the command line arguments
