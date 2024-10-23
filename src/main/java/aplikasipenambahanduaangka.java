@@ -55,6 +55,11 @@ public class aplikasipenambahanduaangka extends javax.swing.JFrame {
         });
 
         btnhapus.setText("Hapus");
+        btnhapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhapusActionPerformed(evt);
+            }
+        });
 
         btnkeluar.setText("Keluar");
 
@@ -144,6 +149,14 @@ public class aplikasipenambahanduaangka extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Input harus berupa angka!", "Error", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_btntambahActionPerformed
+
+    private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed
+     txtAngka1.setText("");
+    txtAngka2.setText("");
+    txtHasil.setText("");
+    // Arahkan fokus ke text field angka pertama
+    txtAngka1.requestFocus();
+    }//GEN-LAST:event_btnhapusActionPerformed
 
     /**
      * @param args the command line arguments
